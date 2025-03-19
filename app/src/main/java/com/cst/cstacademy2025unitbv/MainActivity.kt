@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
     fun goToSecondActivity() {
        // Intent intent = new Intent (this, SecondActivity.class)
-        val intent = Intent(this, AuthentificationActivity::class.java)
+        val intent = Intent(this, ControllerActivity::class.java)
         startActivity(intent)
         finish()
     }
