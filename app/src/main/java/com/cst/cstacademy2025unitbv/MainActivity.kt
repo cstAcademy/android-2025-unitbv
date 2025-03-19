@@ -3,7 +3,6 @@ package com.cst.cstacademy2025unitbv
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -34,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
     fun goToSecondActivity() {
        // Intent intent = new Intent (this, SecondActivity.class)
-        val intent = Intent(this, SecondActivity::class.java)
+        val intent = Intent(this, AuthentificationActivity::class.java)
         startActivity(intent)
         finish()
     }
