@@ -15,7 +15,7 @@
         android:theme="@style/Theme.CSTAcademy2025UnitBV"
         tools:targetApi="31">
         <activity
-            android:name=".SecondActivity"
+            android:name=".AuthentificationActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
