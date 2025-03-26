@@ -10,23 +10,31 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.cst.cstacademy2025unitbv.LoginFragment"
-        tools:layout="@layout/fragment_login"
-        android:label="LoginFragment" >
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
+
+
         <action
             android:id="@+id/action_loginFragment_to_authentication_navigation"
+            app:destination="@id/home_navigation"
             app:launchSingleTop="true"
             app:popUpTo="@id/authentication_navigation"
-            app:popUpToInclusive="true"
-            app:destination="@id/home_navigation" />
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.cst.cstacademy2025unitbv.RegisterFragment"
-        tools:layout="@layout/fragment_register"
-        android:label="RegisterFragment" >
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register">
+
+        <argument
+            app:argType="string"
+            android:name="email"
+            app:nullable="false" />
+
         <action
             android:id="@+id/action_registerFragment_to_authentication_navigation"
             app:destination="@id/home_navigation" />

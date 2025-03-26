@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -22,7 +23,8 @@ class LoginFragment: Fragment() {
             doLogin()
         }
         view.findViewById<Button>(R.id.btn_register).setOnClickListener {
-            goToRegister()
+            val email = view.findViewById<EditText>(R.id.et_email).text.toString()
+            goToRegister(email)
         }
 
     }
@@ -32,8 +34,8 @@ class LoginFragment: Fragment() {
         findNavController().navigate(action)
     }
 
-    fun goToRegister() {
-        val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
+    fun goToRegister(email : String) {
+        val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment(email)
         findNavController().navigate(action)
     }
 }
