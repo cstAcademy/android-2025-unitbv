@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cst.cstacademy2025unitbv.adapters.MediaListAdapter
@@ -61,5 +63,13 @@ class HomeFragment : Fragment() {
             this.adapter = adapter
         }
 
+        view.findViewById<Button>(R.id.btn_go_to_users).setOnClickListener {
+            goToUsers()
+        }
+    }
+
+    fun goToUsers() {
+        val action = HomeFragmentDirections.actionHomeFragmentToNavigationUsers()
+        findNavController().navigate(action)
     }
 }
