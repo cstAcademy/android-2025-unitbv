@@ -11,7 +11,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.cst.cstacademy2025unitbv.adapters.MediaListAdapter
+import com.cst.cstacademy2025unitbv.models.ImageModel
 import com.cst.cstacademy2025unitbv.models.PodcastModel
+import com.cst.cstacademy2025unitbv.models.TextModel
+import com.cst.cstacademy2025unitbv.models.VideoModel
 
 class HomeFragment : Fragment() {
     override fun onCreateView(
@@ -27,34 +30,33 @@ class HomeFragment : Fragment() {
         val rvMedia = view.findViewById<RecyclerView>(R.id.rv_media)
 
         val mediaList = listOf(
+            VideoModel(),
             PodcastModel(),
+            ImageModel(),
+            TextModel(),
+            VideoModel(),
             PodcastModel(),
+            ImageModel(),
+            TextModel(),
+            VideoModel(),
             PodcastModel(),
+            ImageModel(),
+            TextModel(),
+            VideoModel(),
             PodcastModel(),
+            ImageModel(),
+            TextModel(),
+            VideoModel(),
             PodcastModel(),
+            ImageModel(),
+            TextModel(),
+            VideoModel(),
             PodcastModel(),
-            PodcastModel(),
-            PodcastModel(),
-            PodcastModel(),
-            PodcastModel(),
-            PodcastModel(),
-            PodcastModel(),
-            PodcastModel(),
-            PodcastModel(),
-            PodcastModel(),
-            PodcastModel(),
-            PodcastModel(),
-            PodcastModel(),
-            PodcastModel(),
-            PodcastModel(),
-            PodcastModel(),
-            PodcastModel(),
-            PodcastModel(),
-            PodcastModel(),
-        )
+            ImageModel(),
+            TextModel(),
+        ).shuffled()
 
         val adapter = MediaListAdapter(mediaList)
-
 
         val layoutManager = LinearLayoutManager(context)
 
