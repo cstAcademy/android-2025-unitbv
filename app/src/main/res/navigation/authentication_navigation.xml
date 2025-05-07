@@ -9,7 +9,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.cst.cstacademy2025unitbv.LoginFragment"
+        android:name="com.cst.cstacademy2025unitbv.ui.fragments.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
         <action
@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.cst.cstacademy2025unitbv.RegisterFragment"
+        android:name="com.cst.cstacademy2025unitbv.ui.fragments.RegisterFragment"
         android:label="RegisterFragment"
         tools:layout="@layout/fragment_register">
 

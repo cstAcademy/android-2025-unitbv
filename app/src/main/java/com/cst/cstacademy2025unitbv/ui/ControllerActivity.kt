@@ -1,10 +1,11 @@
-package com.cst.cstacademy2025unitbv
+package com.cst.cstacademy2025unitbv.ui
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.cst.cstacademy2025unitbv.R
 
 class ControllerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

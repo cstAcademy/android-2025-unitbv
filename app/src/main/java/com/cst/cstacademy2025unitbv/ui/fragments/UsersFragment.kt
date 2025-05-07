@@ -1,4 +1,4 @@
-package com.cst.cstacademy2025unitbv
+package com.cst.cstacademy2025unitbv.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.cst.cstacademy2025unitbv.R
 import com.cst.cstacademy2025unitbv.adapters.UsersListAdapter
 import com.cst.cstacademy2025unitbv.data.repositories.UsersRepository
 import com.cst.cstacademy2025unitbv.models.UserModel

@@ -1,6 +1,5 @@
-package com.cst.cstacademy2025unitbv
+package com.cst.cstacademy2025unitbv.ui.fragments
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,19 +9,20 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.cst.cstacademy2025unitbv.R
 import com.cst.cstacademy2025unitbv.adapters.MediaListAdapter
 import com.cst.cstacademy2025unitbv.models.ImageModel
 import com.cst.cstacademy2025unitbv.models.PodcastModel
 import com.cst.cstacademy2025unitbv.models.TextModel
 import com.cst.cstacademy2025unitbv.models.VideoModel
 
-class HomeFragment : Fragment() {
+class MediaFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        return inflater.inflate(R.layout.fragment_media, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -64,14 +64,5 @@ class HomeFragment : Fragment() {
             this.layoutManager = layoutManager
             this.adapter = adapter
         }
-
-        view.findViewById<Button>(R.id.btn_go_to_users).setOnClickListener {
-            goToUsers()
-        }
-    }
-
-    fun goToUsers() {
-        val action = HomeFragmentDirections.actionHomeFragmentToNavigationUsers()
-        findNavController().navigate(action)
     }
 }
