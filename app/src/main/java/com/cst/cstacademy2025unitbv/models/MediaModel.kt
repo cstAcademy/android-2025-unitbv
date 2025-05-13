@@ -13,3 +13,6 @@ sealed class MediaModel(
 
 
 class PodcastModel(): MediaModel(MediaType.PODCAST)
+class ImageModel(): MediaModel(MediaType.IMAGE)
+class VideoModel(): MediaModel(MediaType.VIDEO)
+class TextModel(): MediaModel(MediaType.TEXT)
