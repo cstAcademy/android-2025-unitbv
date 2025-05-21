@@ -72,4 +72,8 @@ dependencies {
 
     // JSON serialization library, works with the Kotlin serialization plugin
     implementation(libs.kotlinx.serialization.json)
+
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson) // For JSON parsing
+    implementation(libs.logging.interceptor) // Logging
 }

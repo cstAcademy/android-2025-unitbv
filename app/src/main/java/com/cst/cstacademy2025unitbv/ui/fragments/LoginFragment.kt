@@ -1,5 +1,7 @@
 package com.cst.cstacademy2025unitbv.ui.fragments
 
+import androidx.lifecycle.lifecycleScope
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,8 +11,15 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.cst.cstacademy2025unitbv.R
+import com.cst.cstacademy2025unitbv.helpers.extensions.showToast
+import com.cst.cstacademy2025unitbv.networking.repositories.AuthRepository
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import retrofit2.HttpException
+import java.io.IOException
 
-class LoginFragment: Fragment() {
+class LoginFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -30,11 +39,29 @@ class LoginFragment: Fragment() {
     }
 
     fun doLogin() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            try {
+                val result = withContext(Dispatchers.IO) {
+                    AuthRepository.login("eve.holt@reqres.in", "cityslicka")
+                }
+                goToHome()
+            } catch (e: IOException) {
+                ("Please check your internet connection").showToast(requireContext())
+            } catch (e: HttpException) {
+                ("Server error: ${e.code()}").showToast(requireContext())
+            } catch (e: Exception) {
+                ("Unexpected error: ${e.localizedMessage}").showToast(requireContext())
+            }
+
+        }
+    }
+
+    fun goToHome() {
         val action = LoginFragmentDirections.actionLoginFragmentToAuthenticationNavigation()
         findNavController().navigate(action)
     }
 
-    fun goToRegister(email : String) {
+    fun goToRegister(email: String) {
         val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment(email)
         findNavController().navigate(action)
     }
