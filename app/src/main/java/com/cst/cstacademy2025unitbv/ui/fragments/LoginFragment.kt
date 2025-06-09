@@ -11,7 +11,10 @@ import android.widget.EditText
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.cst.cstacademy2025unitbv.BuildConfig
 import com.cst.cstacademy2025unitbv.R
+import com.cst.cstacademy2025unitbv.helpers.extensions.isEmailValid
+import com.cst.cstacademy2025unitbv.helpers.extensions.isPasswordValid
 import com.cst.cstacademy2025unitbv.helpers.extensions.showToast
 import com.cst.cstacademy2025unitbv.managers.SharedPrefsManager
 import com.cst.cstacademy2025unitbv.networking.repositories.AuthRepository
@@ -38,13 +41,30 @@ class LoginFragment : Fragment() {
             goToRegister(email)
         }
 
+        if(BuildConfig.DEBUG) {
+            view.findViewById<EditText>(R.id.et_email).setText("eve.holt@reqres.in")
+            view.findViewById<EditText>(R.id.et_password).setText("cityslicka")
+        }
     }
 
-    fun doLogin() {
+    private fun doLogin() {
+        val email = view?.findViewById<EditText>(R.id.et_email)?.text.toString()
+        val password = view?.findViewById<EditText>(R.id.et_password)?.text.toString()
+
+        if(!email.isEmailValid()) {
+            context?.showToast(getString(R.string.error_invalid_email))
+            return
+        }
+
+        if(!password.isPasswordValid()) {
+            context?.showToast(getString(R.string.error_invalid_password))
+            return
+        }
+
         viewLifecycleOwner.lifecycleScope.launch {
             try {
                 val result = withContext(Dispatchers.IO) {
-                    AuthRepository.login("eve.holt@reqres.in", "cityslicka")
+                    AuthRepository.login(email, password)
                 }
 
                 result.body()?.token?.let { token ->

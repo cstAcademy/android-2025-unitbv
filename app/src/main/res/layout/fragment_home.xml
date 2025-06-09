@@ -27,6 +27,13 @@
             android:text="@string/go_to_users"
             android:layout_marginTop="@dimen/default_space"/>
 
+        <Button
+            android:id="@+id/btn_log_out"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/log_out"
+            android:layout_marginTop="@dimen/default_space"/>
+
 
     </LinearLayout>
 

@@ -12,7 +12,12 @@
     <string name="title_image">Image</string>
     <string name="title_video">Video</string>
     <string name="title_text">Text</string>
+    <string name="log_out">Log Out</string>
     <string name="go_to_users">Go to users</string>
     <string name="go_to_media">Go to media</string>
+
+<!--    Errors-->
+    <string name="error_invalid_email">Invalid email.</string>
+    <string name="error_invalid_password">Invalid password.</string>
 
 </resources>

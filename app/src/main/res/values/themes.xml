@@ -6,4 +6,11 @@
     </style>
 
     <style name="Theme.CSTAcademy2025UnitBV" parent="Base.Theme.CSTAcademy2025UnitBV" />
+
+    <style name="Theme.CSTAcademy2025UnitBV.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+        <item name="windowSplashScreenIconBackgroundColor">@color/primary</item>
+        <item name="postSplashScreenTheme">@style/Theme.CSTAcademy2025UnitBV</item>
+    </style>
 </resources>

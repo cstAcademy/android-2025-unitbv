@@ -18,6 +18,13 @@ object SharedPrefsManager {
 
     fun getAuthToken(): String? = sharedPrefs.getString(ARK_AUTH_TOKEN, null)
 
+    fun removeAuthToken() {
+        with(sharedPrefs.edit()) {
+            remove(ARK_AUTH_TOKEN)
+            apply()
+        }
+    }
+
     val sharedPrefs = ApplicationController.instance.getSharedPreferences(
         SHARED_PREFS_NAME,
         Context.MODE_PRIVATE
