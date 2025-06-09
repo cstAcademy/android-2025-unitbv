@@ -5,30 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/tv_login"
+    <LinearLayout
+        android:id="@+id/lly_header"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/login"
-        app:flow_firstVerticalBias="0.2"
+        android:orientation="vertical"
+        android:background="@drawable/shape_gradient_primary_accent_secondary_accent"
+        android:padding="@dimen/default_space"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.5" />
+        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintWidth_percent="0.8">
 
-    <EditText
-        android:id="@+id/et_email"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/hint_email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/btn_login"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_login"
-        app:layout_constraintWidth_percent="0.8" />
+        <TextView
+            android:id="@+id/tv_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/login" />
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_space"
+            android:hint="@string/hint_email"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_space"
+            android:hint="@string/hint_password"
+            android:inputType="textEmailAddress" />
+
+    </LinearLayout>
 
 
     <Button
@@ -39,14 +53,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_login"
+        app:layout_constraintTop_toBottomOf="@+id/lly_header"
         app:layout_constraintWidth_percent="0.5" />
 
-    <Button
+    <TextView
         android:id="@+id/btn_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/register"
+        android:background="@drawable/selector_text_background"
+        android:gravity="center"
+        android:padding="@dimen/default_space"
+        android:text="@string/go_to_register"
+        android:textColor="@color/selector_primary_accent_secondary_accent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

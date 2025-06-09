@@ -4,7 +4,9 @@
     <string name="click_me">Click Me</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
+    <string name="go_to_register">Go To Register</string>
     <string name="hint_email">Write your email here…</string>
+    <string name="hint_password">Write your password here…</string>
 
     <string name="title_podcast">Podcast</string>
     <string name="title_image">Image</string>

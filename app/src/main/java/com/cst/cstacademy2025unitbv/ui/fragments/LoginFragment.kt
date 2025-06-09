@@ -8,10 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.cst.cstacademy2025unitbv.R
 import com.cst.cstacademy2025unitbv.helpers.extensions.showToast
+import com.cst.cstacademy2025unitbv.managers.SharedPrefsManager
 import com.cst.cstacademy2025unitbv.networking.repositories.AuthRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -31,7 +33,7 @@ class LoginFragment : Fragment() {
         view.findViewById<Button>(R.id.btn_login).setOnClickListener {
             doLogin()
         }
-        view.findViewById<Button>(R.id.btn_register).setOnClickListener {
+        view.findViewById<TextView>(R.id.btn_register).setOnClickListener {
             val email = view.findViewById<EditText>(R.id.et_email).text.toString()
             goToRegister(email)
         }
@@ -44,6 +46,11 @@ class LoginFragment : Fragment() {
                 val result = withContext(Dispatchers.IO) {
                     AuthRepository.login("eve.holt@reqres.in", "cityslicka")
                 }
+
+                result.body()?.token?.let { token ->
+                    SharedPrefsManager.saveAuthToken(token = token)
+                }
+
                 goToHome()
             } catch (e: IOException) {
                 ("Please check your internet connection").showToast(requireContext())
