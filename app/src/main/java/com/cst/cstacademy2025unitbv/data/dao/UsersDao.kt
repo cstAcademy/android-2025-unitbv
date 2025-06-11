@@ -5,10 +5,11 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.cst.cstacademy2025unitbv.models.UserModel
+import com.cst.cstacademy2025unitbv.models.one_to_one.UserWithIDCardModel
 
 @Dao
 interface UsersDao {
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertAll(users: List<UserModel>)
 
     @Query(
@@ -17,4 +18,7 @@ interface UsersDao {
         """
     )
     suspend fun getAll(): List<UserModel>
+
+    @Query("SELECT * FROM users")
+    suspend fun getUsersWithIDCards(): List<UserWithIDCardModel>
 }

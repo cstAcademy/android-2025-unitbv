@@ -19,5 +19,7 @@
 <!--    Errors-->
     <string name="error_invalid_email">Invalid email.</string>
     <string name="error_invalid_password">Invalid password.</string>
+    <string name="get_id_cards">Get ID Cards</string>
+    <string name="get_random_address_with_users">Get random address with users</string>
 
 </resources>

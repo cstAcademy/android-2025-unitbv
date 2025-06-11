@@ -1,8 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/lly_actions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/shape_vertical_divider"
+        android:orientation="vertical"
+        android:showDividers="middle"
+        android:paddingVertical="@dimen/default_space"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.8">
+
+        <Button
+            android:id="@+id/btn_get_id_cards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/get_id_cards" />
+
+        <Button
+            android:id="@+id/btn_get_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/get_random_address_with_users" />
+
+        <TextView
+            android:id="@+id/tv_log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Text text text Text text text" />
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_users"
@@ -11,6 +45,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/lly_actions" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
